@@ -1,15 +1,13 @@
-<!Doctype>
-<head>
-    <title>nat's blog test</title>
+{% extends 'blog/base.html' %}
 
-</head>
-<body>
-    <h1>My blog page</h1>
+{% block content %}
     {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
             <h1><a href="">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-</body>
+{% endblock %}

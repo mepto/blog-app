@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="page-header">
+        {% if user.is_authenticated %}
+            <div class="btn btn-light pull-right">
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Add a post</a>
+            </div>
+        {% endif %}
         <h1><a href="/">Building something bloggy with Django</a></h1>
     </div>
     <div class="content container">
